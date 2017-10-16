@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	
+	<class name="com.zyx.domain.Book" table="book">
+		<id name="id" column="id">
+			<generator class="native"/>
+		</id>
+		
+		
+		<property name="isbn" column="isbn"/>
+		<property name="bookname" column="bookname"/>
+		<property name="count" column="count"/>
+	
+		<property name="author" column="author"/>
+		<property name="publish" column="publish"/>
+		<property name="booktype" column="booktype"/>
+	</class>
+	
+</hibernate-mapping>       

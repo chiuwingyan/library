@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+
+	<package name="library" extends="struts-default" namespace="/">
+	
+	
+	  <action name="admin_*" class="com.zyx.web.action.AdminAction" method="{1}">
+   			<result name="success">/index.jsp</result>
+    		<result name="false">/login.jsp</result>
+    		<result name="update">/admin/password.jsp</result>
+    		<result name="updatefalse">/admin/password.jsp</result>
+    	</action>
+	  
+	  <action name="booklist_*" class="com.zyx.web.action.BooklistAction" method="{1}">
+            <result name="page">/book/book.jsp</result>
+            <result name="success">/book/bookadd.jsp</result>
+            <result name="bookadd">/book/bookadd.jsp</result>
+            <result name="false">/book/bookadd.jsp</result>
+            <result name="delete" type="redirectAction">booklist_findByPage.action</result>
+            <result name="initUpdate">/book/update.jsp</result>
+            <result name="update">/book/update.jsp</result>
+            <result name="updatefalse">/book/update.jsp</result>
+         </action>
+         
+      <action name="black_*" class="com.zyx.web.action.BlackAction" method="{1}">
+      		<result name="page">/blacklist/blacklist.jsp</result>
+      		<result name="delete" type="redirectAction">black_findByPage.action</result>
+      		<result name="success">/blacklist/blackadd.jsp</result>
+      		<result name="false">/blacklist/blackadd.jsp</result>
+      		<result name="update">/blacklist/update.jsp</result>
+            <result name="updatefalse">/blacklist/update.jsp</result>
+            <result name="initUpdate">/blacklist/update.jsp</result>
+      </action>
+      
+      <action name="borrow_*" class="com.zyx.web.action.BorrowAction" method="{1}">
+      		<result name="page">/borrow/borrowlist.jsp</result>
+      		<result name="iniadd">/borrow/borrowadd.jsp</result>
+      		<result name="add" type="redirectAction">borrow_findByPage.action</result>
+      		<result name="barfalse">/borrow/borrowadd.jsp</result>
+      		<result name="isbnfalse">/borrow/borrowadd.jsp</result>
+	</action>
+	
+	<action name="back_*" class="com.zyx.web.action.BackAction" method="{1}">
+      		<result name="page">/back/backlist.jsp</result>
+      		<result name="iniadd">/back/backadd.jsp</result>
+      		<result name="backok" type="redirectAction">back_findByPage.action</result>
+      		<result name="backfalse">/back/backadd.jsp</result>
+	</action>
+	</package>
+  
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+
